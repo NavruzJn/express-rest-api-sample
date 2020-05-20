@@ -1,0 +1,38 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.1",
+    "sequelize-cli": "^5.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kensanni/RESTful_API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kensanni/RESTful_API/issues"
+  },
+  "homepage": "https://github.com/kensanni/RESTful_API#readme"
+}
