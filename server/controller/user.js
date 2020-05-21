@@ -1,7 +1,8 @@
 import UserModel from '../models/user';
+import JwtMiddleware from '../middleware/auth';
 
 class Users {
-  async signUp(req, res) {
+  static async signUp(req, res) {
       const {name, username, email, password} = req.body;
 
       const newUser = await UserModel.create({
@@ -11,26 +12,42 @@ class Users {
           password
       });
 
-      return res.status(201).send({
-          success: true,
-          message: 'User successfully created',
-          newUser
-      })
+      if (newUser) {
+          const token = JwtMiddleware.getToken(newUser.id, username);
+          return res.send(201).json({
+              success: true,
+              message: 'User created!',
+              token: token
+          });
+      } else {
+          return res.send(403).json({
+              success: false,
+              message: 'Invalid Credentials'
+          });
+      }
   }
 
-    async signIn(req, res) {
+    static async signIn(req, res) {
         const {username, password} = req.body;
 
-        const newUser = await UserModel.findOne({
+        const user = await UserModel.findOne({
             username,
             password
         });
 
-        return res.status(201).send({
-            success: true,
-            message: 'User successfully created',
-            newUser
-        })
+        if (user) {
+            const token = JwtMiddleware.getToken(user.id, username);
+            return res.json({
+                success: true,
+                message: 'Authentication successful!',
+                token: token
+            });
+        } else {
+            return res.send(403).json({
+                success: false,
+                message: 'Invalid Credentials'
+            });
+        }
     }
 }
 

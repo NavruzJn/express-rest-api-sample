@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Navruz Jandullaev",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
@@ -26,13 +26,5 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.38.1",
     "sequelize-cli": "^5.5.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kensanni/RESTful_API.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kensanni/RESTful_API/issues"
-  },
-  "homepage": "https://github.com/kensanni/RESTful_API#readme"
+  }
 }
